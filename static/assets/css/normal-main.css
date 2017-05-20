@@ -257,7 +257,7 @@
 
 	label {
 		color: #313f47;
-		display: block;
+		display: inline-block;
 		font-size: 0.9em;
 		margin: 0 0 0.75em 0;
 	}
@@ -343,15 +343,15 @@
 	textarea {
 		padding: 0.75em 1em;
 	}
-
+    /*
 	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		display: block;
-		float: left;
+		/*display: block;
+		/*float: left;
 		margin-right: -2em;
 		opacity: 0;
 		width: 1em;
@@ -363,12 +363,12 @@
 			text-decoration: none;
 			color: #414f57;
 			cursor: pointer;
-			display: inline-block;
+			/*display: inline-block;
 			font-size: 1em;
 			font-weight: 300;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
-			position: relative;
+			/*position: relative;
 		}
 
 			input[type="checkbox"] + label:before,
@@ -414,8 +414,8 @@
 	input[type="radio"] + label:before {
 		border-radius: 100%;
 	}
-
-	::-webkit-input-placeholder {
+    */
+	/*::-webkit-input-placeholder {
 		color: #616f77 !important;
 		opacity: 1.0;
 	}
@@ -438,7 +438,7 @@
 	.formerize-placeholder {
 		color: #616f77 !important;
 		opacity: 1.0;
-	}
+	}*/
 
 /* Icon */
 
@@ -783,7 +783,7 @@
 		border-radius: 4px;
 		cursor: default;
 		opacity: 0.95;
-		text-align: center;
+		/* text-align: center; */
 		-moz-transform-origin: 50% 50%;
 		-webkit-transform-origin: 50% 50%;
 		-ms-transform-origin: 50% 50%;
@@ -797,6 +797,28 @@
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 		transition: opacity 1s ease, transform 1s ease;
 	}
+	    #main .revisionPageContent{
+	        margin: 0em;
+	    }
+	    #main .listingWrapper{
+	        display: -moz-flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            -moz-flex-direction: row;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+	    }
+	        #main .listingWrapper .subjectListing {
+	            min-width: 33%;
+	        }
+	            #main .listingWrapper .subjectListing ul {
+                    padding-left: 0.675em;
+	            }
+                    #main .listingWrapper .subjectListing ul li {
+                        padding: 0em;
+                    }
 
 		#main .avatar {
 			position: relative;
@@ -821,8 +843,7 @@
 				height: 1px;
 				z-index: -1;
 				background: #c8cccf;
-			}
-
+            }
 		@media screen and (max-width: 480px) {
 
 			#main {

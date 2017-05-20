@@ -32,13 +32,29 @@
                     </section>
 				<!-- Main -->
 					<section id="main">
-                    	{{content}}
-
+						<h1>{{pageTitle}}</h1>
+                    	{% if content %}
+							<p class="revisionPageContent">{{content}}</p>
+						{% endif %}
+						{% if topLevel %}
+						<div class="listingWrapper">
+						{% for x in subs %}
+							<div class="subjectListing"><a href="{{x['route']}}">{{ x["title"] }}</a>
+								<ul>
+									{% for y in x["pages"].keys() %}
+									<li><a href="{{x['pages'][y]['route']}}">{{ x["pages"][y]["title"] }}</a></li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endfor %}
+						</div>
+						{% else %}
                         <ul>
-							{% for x in subs %}
-							<li><a href="#">{{ x }}</a></li>
+							{% for x in subs.keys() %}
+							<li><a href="{{subs[x]['route']}}">{{ subs[x]["title"] }}</a></li>
 							{% endfor %}
 						</ul>
+						{% endif %}
 
 					</section>
 

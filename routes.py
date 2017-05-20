@@ -1,16 +1,52 @@
 #!flask/bin/python
-from flask import abort, Flask, Markup, render_template
-import json
+import markdown
+from flask import abort, Flask, Markup, render_template, request
+import json, os
 
-revisionSubjects = ["cs", "geography", "maths"]
+def createRevisionPages():
+    f = os.listdir("static/revision")
+    out = {}
+    for subject in f:
+        out.update({subject: {}})
+        files = os.listdir("static/revision/"+subject)
+        for file in files:
+            if(file != "assets"):
+                title, type = os.path.splitext("static/revision/" + subject +"/"+ file)
+                title = title[len("static/revision/" + subject +"/"):]
+                route = "/revision/"+subject+"/"+title
+                out[subject].update({title:{"title": title, "type": type, "route":route}})
+    return out
 
-revisionPages = {"cs": ["abc","cba"], "geography": [],"maths": []}
+
+
+revisionSubjects = {"cs":{"route": "/revision/cs/",
+                          "title":"Computer Science",
+                          "description":"Revision notes for AQA A-Level Computer Science"
+                          },
+                    "geography": {"route": "/revision/geography/",
+                                  "title": "Geography",
+                                  "description":"Revision notes for AQA A-Level Geography (2030)"
+                                  },
+                    "maths": {"route": "/revision/maths/",
+                              "title":"Maths",
+                              "description":"Revision resources for Edexcel A-Level Maths"
+                              }
+                    }
+revisionPages = createRevisionPages()
+print(revisionPages)
+rp = {'cs': {'title': 'static/revision/cs/abc', 'type': '.md', 'route': '/revision/cs/static/revision/cs/abc'}, 'geography': {}, 'maths': {}}
+
+#revisionPages = {"cs": {"abc": {"title":"abc", "route": "/revision/cs/abc", "type": "md"},
+#                        "cba": {"title":"cba", "route": "/revision/cs/cba", "type": "md"}},
+#                 "geography": {},
+#                 "maths": {}}
 
 app = Flask(__name__)
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html',e=e), 404
+    url = request.url
+    return render_template('404.html',e=e, url=url), 404
 
 @app.route('/')
 def index():
@@ -33,15 +69,25 @@ def work(project=None):
 @app.route('/revision/<subject>/<document>')
 def revision(subject=None, document=None):
     if(subject):
-        if(subject.lower() in revisionSubjects):
-
+        topLevel = False
+        if(subject.lower() in list(revisionSubjects.keys())):
             if(document):
-                title = document + " - " + subject + " | Jon Morgan"
-                #load from file and present as markdown
-                return render_template('revision-markdown.html', **locals())
+                if(document.lower() in revisionPages[subject.lower()].keys()):
+                    title = document + " - " + subject + " | Jon Morgan"
+                    if(revisionPages[subject][document]["type"] == ".md"):
+                        #load from file and present as markdown
+                        content = Markup(markdown.markdown(open("static" + revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()))
+                        return render_template('normal.html', **locals())
+                    else:
+                        content = open("static"+revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()
+                        return render_template('normal-htmlSafe.html', **locals())
+                else:
+                    abort(404)
             else:
                 title = subject + " | Jon Morgan"
-                content = subject,document # make heading then brief description
+                pageTitle = revisionSubjects[subject]["title"] + " Revision"
+
+                content = revisionSubjects[subject]["description"]
                 subs = revisionPages[subject]
 
                 return render_template('listing-index.html', **locals())
@@ -49,7 +95,15 @@ def revision(subject=None, document=None):
             abort(404)
     else:
         title = "Revision | Jon Morgan"
-        subs = revisionSubjects
+        topLevel = True
+        pageTitle = "Revision"
+        content = ""
+        subs = [revisionSubjects[x] for x in list(revisionSubjects.keys())]
+        for i in range(len(subs)):
+
+            subs[i].update({"pages": revisionPages[list(revisionSubjects.keys())[i]]})
+            print(subs[i])
+        print(subs)
         return render_template('listing-index.html', **locals())
 
 if __name__ == '__main__':

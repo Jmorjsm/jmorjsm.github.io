@@ -1,12 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>404 page not found - Jon Morgan</title>
-</head>
-<body>
-    Uh oh
-    <br>
-    {{ e }}
-</body>
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{{title if title else "Untitled"}} - Jon Morgan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/static/assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/assets/css/normal-main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+                <!-- Header -->
+                    <section id="header">
+                        <header>
+                            <ul class="topButtons">
+                                <li id="homeLink"><a href="/">Jon Morgan</a></li>
+                                <li><a href="http://medium.com/@jmorjsm">Blog</a></li>
+                                <li><a href="/work">Work</a></li>
+                                <li><a href="/revision">Revision</a></li>
+                            </ul>
+                        </header>
+                    </section>
+				<!-- Main -->
+					<section id="main">
+                    <h1>404!!! Wrong way!</h1>
+                        <p>I dont have a page at {{url}}<br>
+                            Contact me on Twitter @jmorjsm if you think something's gone wrong!
+                        </p>
+
+                    <a href="/">Return to homepage</a>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Jon Morgan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="/static/assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
 </html>
