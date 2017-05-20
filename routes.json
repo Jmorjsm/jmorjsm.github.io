@@ -1,1 +1,54 @@
-{}
+{
+  "/": {
+    "title": "",
+    "routes": ["/","/index"],
+    "type": "index",
+    "templateName": "index.hml",
+    "subs": {
+      "work": {
+        "title": "",
+        "routes": ["/work/"],
+        "type": "html",
+        "templateName": "",
+        "subs": null
+     },
+      "revision": {
+        "title": "",
+        "routes": ["/revision/"],
+        "type": "listing",
+        "templateName": "listing-index.htm",
+        "subs":{
+          "cs": {
+            "title": "Computer Science",
+            "routes":"/revision/cs/",
+            "subs":[
+
+            ]
+          }
+          ,
+          "geography": {
+            "title": "Geography",
+            "subs":{
+            "human": {
+              "title": "Human",
+              "routes": [
+                "/revision/geography/human"
+              ]
+            },
+            "Physical":{
+              "title": "physical",
+              "routes": [
+                "/revision/geography/physical"
+              ]
+            }
+            }
+          },
+          "maths": {
+            "title": "Maths",
+            "subs":[]
+          }
+        }
+      }
+    }
+  }
+}

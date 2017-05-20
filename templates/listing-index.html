@@ -32,7 +32,14 @@
                     </section>
 				<!-- Main -->
 					<section id="main">
-                    {{content|safe}}
+                    	{{content}}
+
+                        <ul>
+							{% for x in subs %}
+							<li><a href="#">{{ x }}</a></li>
+							{% endfor %}
+						</ul>
+
 					</section>
 
 				<!-- Footer -->
