@@ -17,8 +17,6 @@ def createRevisionPages():
                 out[subject].update({title:{"title": title, "type": type, "route":route}})
     return out
 
-
-
 revisionSubjects = {"cs":{"route": "/revision/cs/",
                           "title":"Computer Science",
                           "description":"Revision notes for AQA A-Level Computer Science"
@@ -33,13 +31,6 @@ revisionSubjects = {"cs":{"route": "/revision/cs/",
                               }
                     }
 revisionPages = createRevisionPages()
-print(revisionPages)
-rp = {'cs': {'title': 'static/revision/cs/abc', 'type': '.md', 'route': '/revision/cs/static/revision/cs/abc'}, 'geography': {}, 'maths': {}}
-
-#revisionPages = {"cs": {"abc": {"title":"abc", "route": "/revision/cs/abc", "type": "md"},
-#                        "cba": {"title":"cba", "route": "/revision/cs/cba", "type": "md"}},
-#                 "geography": {},
-#                 "maths": {}}
 
 app = Flask(__name__)
 
@@ -58,10 +49,11 @@ def work(project=None):
     if(project):
         title = "this project"
         content = "this project"
+
         return render_template("normal-htmlSafe.html", **locals())
     else:
         title = "All projects"
-        content = "showing all projects"
+        content = '<div id="placeholderBox">Coming soon...</div>'
         return render_template("normal-htmlSafe.html", **locals())
 
 @app.route('/revision/')

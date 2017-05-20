@@ -776,7 +776,7 @@
 	#main {
 	    text-transform: none;
 		position: relative;
-		max-width: 100%;
+		max-width: 54em;
 		min-width: 54em;
 		padding: 1em;
 		background: #ffffff;
@@ -819,7 +819,17 @@
                     #main .listingWrapper .subjectListing ul li {
                         padding: 0em;
                     }
-
+        #main #placeholderBox{
+            background-color: #EEEEEE;
+            border: 2px solid #404040;
+            border-radius: 0.675em;
+            font-weight: 900;
+            text-align:center;
+            line-height:5em;
+            vertical-align:middle;
+            width:10em;
+            height:5em;
+        }
 		#main .avatar {
 			position: relative;
 			display: block;
