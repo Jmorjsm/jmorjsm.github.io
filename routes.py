@@ -94,9 +94,10 @@ def revision(subject=None, document=None):
         for i in range(len(subs)):
 
             subs[i].update({"pages": revisionPages[list(revisionSubjects.keys())[i]]})
-            print(subs[i])
-        print(subs)
+            #print(subs[i])
+        #print(subs)
         return render_template('listing-index.html', **locals())
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
