@@ -2,6 +2,11 @@
 import markdown
 from flask import abort, Flask, Markup, render_template, request
 import json, os
+try:
+    import common
+    DEBUG = common.DEBUG
+except ImportError:
+    DEBUG = True
 
 def createRevisionPages():
     f = os.listdir("static/revision")
@@ -99,5 +104,8 @@ def revision(subject=None, document=None):
         return render_template('listing-index.html', **locals())
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run(host='0.0.0.0', port=80)
+    if(DEBUG):
+        app.run(debug=True)
+    else:
+        #Assume production
+        app.run(host='0.0.0.0', port=80)
