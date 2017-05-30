@@ -5,20 +5,22 @@ import json, os
 try:
     import common
     DEBUG = common.DEBUG
+    dir_prefix = "/root/jmorjsm_com/"
 except ImportError:
+    dir_prefix=""
     DEBUG = True
 
 def createRevisionPages():
-    f = os.listdir("static/revision")
+    f = os.listdir(dir_prefix+"static/revision")
     out = {}
     for subject in f:
         out.update({subject: {}})
-        files = os.listdir("static/revision/"+subject)
+        files = os.listdir(dir_prefix+"static/revision/"+subject)
         for file in files:
             if(file != "assets"):
-                title, type = os.path.splitext("static/revision/" + subject +"/"+ file)
-                title = title[len("static/revision/" + subject +"/"):]
-                route = "/revision/"+subject+"/"+title
+                title, type = os.path.splitext(dir_prefix+"static/revision/" + subject +"/"+ file)
+                title = title[len(dir_prefix+"static/revision/" + subject +"/"):]
+                route = dir_prefix+"revision/"+subject+"/"+title
                 out[subject].update({title:{"title": title, "type": type, "route":route}})
     return out
 
@@ -73,10 +75,10 @@ def revision(subject=None, document=None):
                     title = document + " - " + subject + " | Jon Morgan"
                     if(revisionPages[subject][document]["type"] == ".md"):
                         #load from file and present as markdown
-                        content = Markup(markdown.markdown(open("static" + revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()))
+                        content = Markup(markdown.markdown(open(dir_prefix+"static" + revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()))
                         return render_template('normal.html', **locals())
                     else:
-                        content = open("static"+revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()
+                        content = open(dir_prefix+"static"+revisionPages[subject][document]["route"]+revisionPages[subject][document]["type"]).read()
                         return render_template('normal-htmlSafe.html', **locals())
                 else:
                     abort(404)
