@@ -24,11 +24,7 @@ def createRevisionPages():
                 out[subject].update({title:{"title": title, "type": type, "route":route}})
     return out
 
-revisionSubjects = {"cs":{"route": "/revision/cs/",
-                          "title":"Computer Science",
-                          "description":"Revision notes for AQA A-Level Computer Science"
-                          },
-                    "geography": {"route": "/revision/geography/",
+revisionSubjects = {"geography": {"route": "/revision/geography/",
                                   "title": "Geography",
                                   "description":"Revision notes for AQA A-Level Geography (2030)"
                                   },
