@@ -18,14 +18,6 @@
         "type": "listing",
         "templateName": "listing-index.htm",
         "subs":{
-          "cs": {
-            "title": "Computer Science",
-            "routes":"/revision/cs/",
-            "subs":[
-
-            ]
-          }
-          ,
           "geography": {
             "title": "Geography",
             "subs":{

@@ -20,7 +20,7 @@ def createRevisionPages():
             if(file != "assets"):
                 title, type = os.path.splitext(dir_prefix+"static/revision/" + subject +"/"+ file)
                 title = title[len(dir_prefix+"static/revision/" + subject +"/"):]
-                route = dir_prefix+"revision/"+subject+"/"+title
+                route = "/revision/"+subject+"/"+title
                 out[subject].update({title:{"title": title, "type": type, "route":route}})
     return out
 
@@ -110,4 +110,4 @@ if __name__ == '__main__':
         app.run(debug=True)
     else:
         #Assume production
-        app.run(host='0.0.0.0', port=80)
+        app.run(host='0.0.0.0', port=443)
