@@ -8,15 +8,15 @@ $(document).ready(function() {
             }
         });
     }
-    if(a = Cookies.get('newUI')){
-        if(a == 1 && window.location.href.indexOf("static") != -1){
-            window.location.assign("/revision/maths/random-questions")
-        }else if (a==0 && window.location.href.indexOf("static") == -1){
-            window.location.assign("/static/revision/maths/random-questions.html")
-        }
-    }else{
-        Cookies.set('newUI', 1);
-    }
+    // if(a = Cookies.get('newUI')){
+    //     if(a == 1 && window.location.href.indexOf("static") != -1){
+    //         window.location.assign("/revision/maths/random-questions")
+    //     }else if (a==0 && window.location.href.indexOf("static") == -1){
+    //         window.location.assign("/assets/random-questions.html")
+    //     }
+    // }else{
+    //     Cookies.set('newUI', 1);
+    // }
     function toTitleCase(str) {
         return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
@@ -35,13 +35,6 @@ $(document).ready(function() {
 
     var selectedModules = [];
 
-    $("#toggleStyle").on("click", function(e){
-        e.preventDefault(e);
-        current = Cookies.get("newUI");
-        Cookies.set("newUI", 1-current);
-        location.reload()
-     });
-
     $("#newQButton").on("click", function(e){
 
      e.preventDefault(e);
@@ -58,19 +51,15 @@ $(document).ready(function() {
         }else{
           randomModule = selectedModules[0];
         }
-        console.log("a");
         randomQuestion = moduleQuestions[randomModule][Math.floor(Math.random() * (moduleQuestions[randomModule].length + 1))];
-//
-        console.log(randomQuestion);
         paper = toTitleCase(randomQuestion.replace(/-/g, " ")).substr(0,randomQuestion.length-12);
         splitPaper = paper.split(" ")
-        console.log(splitPaper);
 
 		ms = "http://pmt.physicsandmathstutor.com/download/Maths/A-level/"+splitPaper[1].toUpperCase()+"/Papers-Edexcel/"+splitPaper[2]+"%20"+splitPaper[3]+"%20MS%20-%20"+splitPaper[1]+"%20Edexcel.pdf";
         qp = "http://pmt.physicsandmathstutor.com/download/Maths/A-level/"+splitPaper[1].toUpperCase()+"/Papers-Edexcel/"+splitPaper[2]+"%20"+splitPaper[3]+"%20QP%20-%20"+splitPaper[1]+"%20Edexcel.pdf";
 
         $("#paper").html(paper+' | <a id="markScheme" href="'+ms+'" target="_blank">Mark scheme</a> | <a id="thisPaper" href="'+qp+'" target="_blank">More from this paper</a>');
-        $("#question").html('<img src="/static/revision/maths/assets/images/mathsQuestions/'
+        $("#question").html('<img src="/assets/images/mathsQuestions/'
         +randomQuestion + '" id="mainImg">');
       }
      }catch(TypeError){

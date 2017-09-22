@@ -1,6 +1,7 @@
 ---
 layout: post
-title: worldcities
+title: World Cities
+category: revision
 ---
 
 # World Cities Geography Revision #
