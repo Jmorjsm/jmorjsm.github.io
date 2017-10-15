@@ -104,10 +104,12 @@ body{
 
 .content > *{
 	margin:5px auto 5px auto;
-	max-width: 850px;
+	/*width: 850px;*/
+	max-width: 100%;
 }
 .content img{
-	max-width: 850px;
+	/*width: 850px;*/
+	max-width: 100%;
 }
 
 .content caption{
