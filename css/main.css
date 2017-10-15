@@ -18,24 +18,17 @@ body{
 	top:0px;
 	z-index: -999;
 	overflow: hidden;
-	background:
-linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-background-color: #131313;
-background-size: 20px 20px;
+   background-image:url("/assets/images/95ad61f1.png");
+
 }
 .header * {
 	color: #131313;
 }
 .headerWrapper{
-	width:480px;
+	max-width:480px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #888;	
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAAG0lEQVQYV2N0d3f/zwAFjCAO12VRMBeTA1MGAAnZCTmi8dUhAAAAAElFTkSuQmCC) repeat;	
 }
 .headerNav {
 	margin: 0px auto 0px auto;
@@ -87,11 +80,12 @@ background-size: 20px 20px;
 	color:#ff7496;
 }
 .infoWrapper{
-	width:256px;
+	max-width:256px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .infoWrapper *{
+	color: #F0F0F0;
 	margin: 2px 0px 2px 0px;
 }
 
@@ -106,6 +100,21 @@ background-size: 20px 20px;
 	margin-top: 348px;
 	line-height: 1.5;
 }
+
+
+.content > *{
+	margin:5px auto 5px auto;
+	max-width: 850px;
+}
+.content img{
+	max-width: 850px;
+}
+
+.content caption{
+	font-weight:100;
+}
+
+
 
 footer{
 	text-align: center;
