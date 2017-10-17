@@ -2,6 +2,7 @@
 layout: project
 title: Decent Hexajon
 category: projects
+description: Imagine being a point. As a point, you feel like all the sides are out to get you. Then you realise you're existing within a shape and you can only move in two directions. Welcome to the world of Super Hexagon.
 ---
 
 {% include image.html url="/assets/projects/decent-hexajon/images/decent-hexajon-menu-screenshot.png" description="Decent Hexajon... Not Quite Super Hexagon" %}

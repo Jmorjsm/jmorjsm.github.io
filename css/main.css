@@ -116,7 +116,42 @@ body{
 	font-weight:100;
 }
 
+.content .featured {
+	display: inline-block;
+	margin-top: 0px;
+}
+.content .featured li{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 5px;
+	width: 180px;
+	white-space: wrap;
+	height:140px;
+}
 
+.content .featured li h3{
+	margin: 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.content .featured li .excerpt {
+	font-size: 10pt !important;
+	display: block;
+	display: -webkit-box;
+	max-width: 100px;
+	text-overflow: ellipsis;
+	-webkit-line-clamp:5;
+	-webkit-box-orient: vertical;
+
+	white-space: wrap;
+	overflow: hidden;
+	margin: 0px auto 0px 5px;
+}
+.featuredTag, .featuredTag *{
+	font-size: 10pt;
+	color: #929292;
+}
 
 footer{
 	text-align: center;

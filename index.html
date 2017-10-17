@@ -9,11 +9,14 @@ Hi! I'm Jon Morgan and I'm a Computer Science student at City, Universiy of Lond
 Thanks for visiting my website, I hope I can provide something you find interesting.
 <hr>
 <h1>Featured:</h1>
-<ul>
+<ul class="featured">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <a href="{{ post.category }}">{{ post.category }}</a>
+      <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+      <p class="excerpt">{{ post.description }}</p>
+      <div class="featuredTag">
+      	<i class="fa fa-tag" aria-hidden="true"></i>: <a href="{{ post.category }}">{{ post.category }}</a>
+      </div>
     </li>
   {% endfor %}
 </ul>

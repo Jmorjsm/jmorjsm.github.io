@@ -2,6 +2,7 @@
 layout: post
 title: World Cities
 category: revision
+description: World Cities Geography Revision. Urban areas - Human settlement with a high population density. 50% of the worlds population live in urban areas
 ---
 
 # World Cities Geography Revision #
