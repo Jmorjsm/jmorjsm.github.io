@@ -123,10 +123,11 @@ body{
 .content .featured li{
 	display: inline-block;
 	vertical-align: top;
-	margin: 0px 5px;
+	padding: 0px 5px;
 	width: 180px;
 	white-space: wrap;
 	height:140px;
+	background-color: #e8e8e8;
 }
 
 .content .featured li h3{
