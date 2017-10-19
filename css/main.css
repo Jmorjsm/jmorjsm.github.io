@@ -18,7 +18,7 @@ body{
 	top:0px;
 	z-index: -999;
 	overflow: hidden;
-   background-image:url("/assets/images/95ad61f1.png");
+	background-image:url("/assets/images/95ad61f1.png");
 
 }
 .header * {
@@ -150,7 +150,9 @@ body{
 	margin: 0px auto 0px 5px;
 }
 .featuredTag{
-	background-color: #D0D0D0
+	background-color: #D0D0D0;
+	display: inline;
+	padding:2px 5px 10px 5px;
 }
 .featuredTag, .featuredTag *{
 	font-size: 10pt;
