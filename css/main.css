@@ -149,6 +149,9 @@ body{
 	overflow: hidden;
 	margin: 0px auto 0px 5px;
 }
+.featuredTag{
+	background-color: #D0D0D0
+}
 .featuredTag, .featuredTag *{
 	font-size: 10pt;
 	color: #929292;
