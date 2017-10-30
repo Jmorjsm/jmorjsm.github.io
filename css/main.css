@@ -18,17 +18,19 @@ body{
 	top:0px;
 	z-index: -999;
 	overflow: hidden;
-	background-image:url("/assets/images/newBG.jpg");
+	background-image: url(/assets/images/newBG.jpg);
+	background-position-y: 1500px;
+	background-position-x: -1300px;
 
 }
 .header * {
 	color: #131313;
 }
 .headerWrapper{
-	max-width:480px;
+	max-width:300px;
 	margin-left: auto;
 	margin-right: auto;
-	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAAG0lEQVQYV2N0d3f/zwAFjCAO12VRMBeTA1MGAAnZCTmi8dUhAAAAAElFTkSuQmCC) repeat;	
+	background-color: #404040;
 }
 .headerNav {
 	margin: 0px auto 0px auto;
