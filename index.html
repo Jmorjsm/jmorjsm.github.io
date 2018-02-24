@@ -1,10 +1,12 @@
 ---
-title: index
+title: Jon Morgan
 layout: default
 ---
 
 <h1>About</h1>
-Hi! I'm Jon Morgan and I'm a Computer Science student at City, Universiy of London. I love programming small projects, hacking hardware, researching computing, and playing computer games. I have a passion for running, and have been getting back into cycling more recently, and I also have an interest in geography and social sciences, hence I enjoy playing with geographical or civil data.
+Hi! I'm Jon Morgan and I'm a Computer Science student at City, Universiy of London. I love programming small projects, hacking hardware, researching computing, and playing computer games. I have a passion for running, and have been getting back into cycling more recently.
+<br>
+Python is my main language, but I also use a bit of JS for frontends, and I'm learning Java as part of my uni course!
 <br>
 Thanks for visiting my website, I hope I can provide something you find interesting.
 <hr>
@@ -15,7 +17,7 @@ Thanks for visiting my website, I hope I can provide something you find interest
       <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
       <p class="excerpt">{{ post.description }}</p>
       <div class="featuredTag">
-      	<i class="fa fa-tag" aria-hidden="true"></i>: <a href="{{ post.category }}">{{ post.category }}</a>
+      	<i class="fa fa-tag" aria-hidden="true"></i>: <a href="{{ post.category }}/">{{ post.category }}</a>
       </div>
     </li>
   {% endfor %}

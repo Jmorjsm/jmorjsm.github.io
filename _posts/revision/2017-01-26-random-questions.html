@@ -2,56 +2,46 @@
 layout: post
 title: Random Questions
 category: revision
-description: Random A level maths question generator for edexcel exams up to 2017.
+description: Random A level maths question generator for edexcel exams up to 2017. I built this with a bit of javascript and some very hack-ey images of pictures from some other site. It works though!
 ---
-<html>
-  <head>
-    <title>Random A-level Maths Questions</title>
-    <script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/assets/js/js.cookies.js"></script>
-    <script type="text/javascript" src="/assets/js/randomQuestions.js"></script>
-    <style>
-      #question img{
-        max-width: 35em;
-      }
-      #modules{
-        display: inline-table;
-      }
-      <!--#markScheme {-->
-        <!--display: inline;-->
-      <!--}-->
-    #toggleStyle{
-    float: right;}
+<div id="options">
+  <form id="optionsForm", name="optionsForm">
 
-    </style>
-
-  </head>
-  <body>
-    <div id="options">
-      <form id="optionsForm", name="optionsForm">
-
-        <div id="moduleSelect">
-          Modules:
-          <div id="modules">
-          <label><input type="checkbox" name="module" value="c1">C1</label>
-          <label><input type="checkbox" name="module" value="c2">C2</label>
-          <label><input type="checkbox" name="module" value="c3">C3</label>
-          <label><input type="checkbox" name="module" value="c4">C4</label><br>
-          <label><input type="checkbox" name="module" value="s1">S1</label>
-          <label><input type="checkbox" name="module" value="s2">S2</label>
-          <label><input type="checkbox" name="module" value="m1">M1</label>
-          <label><input type="checkbox" name="module" value="m2">M2</label><br>
-          <label><input type="checkbox" name="module" value="fp1">FP1</label>
-          </div>
-        </div>
-      </form>
-      <a href="#" id="newQButton">Next question</a>
-      <div id="paper"></div><a id="markScheme"target="_blank"></a>
+    <div id="moduleSelect">
+      Modules:
+      <div id="modules">
+        <label><input type="checkbox" name="module" value="c1">C1</label>
+        <label><input type="checkbox" name="module" value="c2">C2</label>
+        <label><input type="checkbox" name="module" value="c3">C3</label>
+        <label><input type="checkbox" name="module" value="c4">C4</label><br>
+        <label><input type="checkbox" name="module" value="s1">S1</label>
+        <label><input type="checkbox" name="module" value="s2">S2</label>
+        <label><input type="checkbox" name="module" value="m1">M1</label>
+        <label><input type="checkbox" name="module" value="m2">M2</label><br>
+        <label><input type="checkbox" name="module" value="fp1">FP1</label>
+      </div>
     </div>
+  </form>
+  <a href="#" id="newQButton">Next question</a>
+  <div id="paper"></div><a id="markScheme"target="_blank"></a>
+</div>
 
-    <div id="question">
+<div id="question">
 
-    </div>
-  </body>
+</div>
 
-</html>
+<script defer type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script>
+<script defer type="text/javascript" src="/assets/js/js.cookies.js"></script>
+<script defer type="text/javascript" src="/assets/js/randomQuestions.js"></script>
+<style>
+#question img{
+  max-width: 35em;
+}
+#modules{
+  display: inline-table;
+}
+
+#toggleStyle{
+  float: right;}
+
+</style>
