@@ -19,7 +19,8 @@ body{
 	z-index: -999;
 	overflow: hidden;
     /* display: inline; */
-    
+	max-width: 920px;
+	margin: auto;
 }
 .header * {
 	color: #131313;
@@ -43,11 +44,9 @@ body{
     position:fixed;
 }
 
-.headerNav>div{
-    max-width: 200px;
-}
 .headerNav>ul{
-    margin:0px;
+	margin:auto;
+	max-width: 920px;
     padding:0px;
 }
 .headerNav li{
@@ -118,7 +117,6 @@ body{
 	margin-top: 265px;
 	line-height: 1.5;
 }
-
 
 .content > *{
 	margin:5px auto 5px auto;
