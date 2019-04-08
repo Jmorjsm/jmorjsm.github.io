@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>{{page.title}} | jmorjsm</title>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 
         <script async src="https://use.fontawesome.com/a928afa3b6.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,19 +20,25 @@
 </script>
    </head>
     <body>
-    	<div id="wrapper">
-    		<ul class="headerNav">
-				<li><a href="/">Home</a></li>
-                <li><a href="https://medium.com/@jmorjsm">Blog</a></li>
-                <li><a href="/revision/">Revision</a></li>
-                <li><a href="/projects/">Projects</a></li>
-			</ul>
+    	<div id="wrapper"><div class="headerNav">
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/revision/">Revision</a>
+					</li>
+					<li>
+						<a href="/projects/">Projects</a>
+					</li>
+				</ul>
+			</div>
 			<div class="header">
 				
 				<div class="headerWrapper">
 				</div>
 			</div>
-			<div class="content" style="margin-top:0;">
+			<div class="content" style="margin-top: 10px;">
 				<h1>{{ page.title }}</h1>
 				{{ content }}
 			</div>
@@ -42,7 +48,7 @@
 			<hr>
 				&copy; <span id="copyrightYear"></span> Jon Morgan
 				<ul class="icons">
-							<li><a href="https://twitter.com/jmorjsm" class="fa fa-twitter"></a></li>
+							<li><a href="https://twitter.com/atJonMorgan" class="fa fa-twitter"></a></li>
 							<li><a href="https://github.com/jmorjsm" class="fa fa-github"></a></li>
 							<li><a href="https://www.linkedin.com/in/jmorjsm/" class="fa fa-linkedin"></a></li>
 							<li><a href="mailto://jmorjsm@gmail.com" class="fa fa-envelope"></a></li>
