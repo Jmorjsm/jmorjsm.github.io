@@ -18,18 +18,14 @@ body{
 	top:0px;
 	z-index: -999;
 	overflow: hidden;
-	background-image: url(/assets/images/newBG.jpg);
-	background-position-y: 1500px;
-	background-position-x: -1300px;
-
+	display:inline;
 }
 .header * {
 	color: #131313;
 }
 .headerWrapper{
 	max-width:300px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 0px;
 	background-color: #404040;
 }
 .headerNav {
