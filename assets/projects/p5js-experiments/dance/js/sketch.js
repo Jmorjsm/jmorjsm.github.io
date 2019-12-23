@@ -6,17 +6,19 @@ var vScale = 6;
 
 function colorDistance(r1, g1, b1, r2, g2, b2) {
     return (r2 - r1) * (r2 - r1) +
-        (g2 - g1) * (g2 - g1) +
-        (b2 - b1) * (b2 - b1);
+           (g2 - g1) * (g2 - g1) +
+           (b2 - b1) * (b2 - b1);
 }
 
 function preload() {
-    video = createVideo('assets/dance.mp4');
+    video = createVideo('/assets/projects/p5js-experiments/dance/assets/dance.mp4');
     prev = createImage(640, 360)
 }
 
 function setup() {
-    createCanvas(640, 480);
+    var canvas = createCanvas(640, 480);
+    
+    canvas.parent('canvas-wrapper');    
 
     video.hide();
     video.loop();
