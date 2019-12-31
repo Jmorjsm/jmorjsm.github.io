@@ -1,0 +1,58 @@
+---
+layout: project
+title: p5js experiments
+category: projects
+description: A few little experiments I've been working on recently in p5.js
+---
+
+<p>
+  Here I've got a few little experiments I've been working on using p5.js, the JavaScript counterpart to Processing.
+</p>
+
+<div>
+  <h2>Motion painting</h2>
+  <p>
+    The below sketch is my first endeavour into motion tracking, inspired heavily by <a
+      href="https://twitter.com/mayaonthenet">Maya Man</a>'s beautiful <a
+      href="https://mayaontheinter.net/paintme/">paint me</a> art pieces.
+  </p>
+  <p>
+    I determine which pixels have changed by looping through a downsized version of the previous frame and comparing the
+    "distances" between the colours of each pixel. Pixels with larger distances are repainted with higher opacity so
+    those that have not changed much stay trasparent and effectively invisible.
+  </p>
+  <div class="sketch-wrapper" style="height: 600px;">
+    <video playsinline autoplay muted loop preload="auto" width="500">
+      <source src="/assets/projects/p5js-experiments/dance/assets/before_after.mp4" type="video/mp4">
+      <source src="/assets/projects/p5js-experiments/dance/assets/before_after.webm" type="video/webm">
+    </video>
+    <script
+      src="http://gist-it.appspot.com/github/Jmorjsm/jmorjsm.github.io/raw/addingP5Experiments/assets/projects/p5js-experiments/dance/js/sketch.js">
+    </script>
+  </div>
+</div>
+
+<div>
+  <h2>Edge detection</h2>
+  <p>
+    This sketch demonstrates a common method used for edge detection using the Sobel operator. I learned most of the
+    theory behind this sketch from Dr Mike Pound's <a href="https://www.youtube.com/watch?v=uihBwtPIBxM">videos on
+      Computerphile.</a>
+  </p>
+  <p>
+    Put simply, the code looks at the surrounding 9 pixels of each pixel in the image and multiplies the left and right,
+    and above and below pixels by 1 or -1 and adds all these values up to determine the level of change betin the
+    horizontal and vertical directions. This is then mapped into a greyscale value and displayed on the screen.
+  </p>
+
+  <img src="/assets/projects/p5js-experiments/edges/assets/rose2.jpg" width="400px" height="400px" />
+  <img src="/assets/projects/p5js-experiments/edges/assets/rose-output.png" width="400px" height="400px" />
+
+  <div class="sketch-wrapper" style="height: 600px;">
+    <script
+      src="http://gist-it.appspot.com/github/Jmorjsm/jmorjsm.github.io/raw/addingP5Experiments/assets/projects/p5js-experiments/edges/js/sketch.js">
+    </script>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
